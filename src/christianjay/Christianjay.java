@@ -1,21 +1,57 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package christianjay;
 
-/**
- *
- * @author PC 7
- */
+import java.util.Scanner;
+
 public class Christianjay {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter marks in Science: ");
+        int Science = sc.nextInt();
+
+        System.out.print("Enter marks in History: ");
+        int History = sc.nextInt();
+
+        System.out.print("Enter marks in Math: ");
+        int Math = sc.nextInt();
+
+        System.out.print("Enter marks in Soc: ");
+        int Soc = sc.nextInt();
+
+        System.out.print("Enter marks in Arts: ");
+        int Arts = sc.nextInt();
+
+        int total = Science + History + Math + Soc + Arts;
+        double percentage = total / 5.0;
+
+        String remarks;
+        if (percentage < 70) {
+            remarks = "Fail";
+            System.out.println("\nTotal Marks: " + total);
+            System.out.printf("Total Percentage: %.2f\n", percentage);
+            System.out.println("Remarks: " + remarks);
+            System.out.println("Try Again " + name);
+        } else if (percentage <= 75) {
+            remarks = "Poor";
+        } else if (percentage <= 80) {
+            remarks = "Fair";
+        } else if (percentage <= 85) {
+            remarks = "Good";
+        } else if (percentage <= 90) {
+            remarks = "Good";
+        } else {
+            remarks = "Excellent";
+        }
+
+        if (percentage >= 70) {
+            System.out.println("\nTotal Marks: " + total);
+            System.out.printf("Total Percentage: %.2f\n", percentage);
+            System.out.println("Remarks: " + remarks);
+            System.out.println("Congrats " + name + " you Passed.");
+        }
     }
-    
 }
